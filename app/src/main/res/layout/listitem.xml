@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="feed"
+            type="com.kotlintut.prathamesh.planetviewer.Planet"/>
+        <variable
+            name="event"
+            type="com.kotlintut.prathamesh.planetviewer.ClickingInterface"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imgv_pl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        card_view:cardBackgroundColor="@color/colorTransparent"
+        card_view:cardCornerRadius="12dp"
+        card_view:cardElevation="3dp"
+        card_view:contentPadding="4dp"
+        android:onClick="@{()->event.onItemClick(feed.position)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10sp"
+                imageResource="@{feed.iconResource}"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{feed.name}"
+                android:textSize="30sp"
+                android:layout_toRightOf="@id/imageView"
+                android:layout_marginRight="10sp"
+                android:layout_alignParentRight="true"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@{feed.descript}"
+                android:layout_below="@id/textView" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Ascending"
+        android:id="@+id/AscendOption"/>
+
+    <item
+        android:title="Descending"
+        android:id="@+id/DescendOption"/>
+
+</menu>

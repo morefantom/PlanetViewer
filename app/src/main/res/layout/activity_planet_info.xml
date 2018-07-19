@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.lang.Integer"/>
+        <variable
+            name="feed"
+            type="com.kotlintut.prathamesh.planetviewer.Planet"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PlanetInfo"
+        android:background="@mipmap/bgplinfo">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    imageResource="@{feed.iconResource}"
+                    android:id="@+id/iv"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@{feed.name}"
+                    android:layout_below="@+id/iv"
+                    android:id="@+id/planetname"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@{feed.descript}"
+                    android:layout_below="@+id/planetname"
+                    android:id="@+id/desc"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="italic"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tile"
+                    android:layout_below="@id/desc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/rel_lay">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dia"
+                        android:textColor="@color/colorWhite"
+                        android:text="Planet Diameter: "
+                        android:padding="10dp"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="@color/colorWhite"
+                        android:id="@+id/diaVal"
+                        android:textSize="20sp"
+                        android:layout_toRightOf="@id/dia"
+                        android:text="@{Integer.toString(feed.diameter)}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dist"
+                        android:textColor="@color/colorWhite"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:layout_below="@id/dia"
+                        android:text="Distance from sun: "/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/distVal"
+                        android:textColor="@color/colorWhite"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:layout_below="@id/diaVal"
+                        android:layout_toRightOf="@id/dist"
+                        android:text="@{feed.distanceSun}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/orb"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_below="@id/dist"
+                        android:text="Orbit Period: "/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/orbVal"
+                        android:padding="10dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        android:layout_below="@id/distVal"
+                        android:layout_toRightOf="@id/orb"
+                        android:text="@{feed.periodOrbit}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/moons"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorWhite"
+                        android:padding="10dp"
+                        android:layout_below="@id/orb"
+                        android:text="Number of Moons: "/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/moonsVal"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorWhite"
+                        android:padding="10dp"
+                        android:layout_below="@id/orbVal"
+                        android:layout_toRightOf="@id/moons"
+                        android:text="@{feed.moons}"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_big"
+                    android:layout_below="@id/rel_lay"
+                    android:textColor="@color/colorWhite"
+                    android:text="@{feed.bigDescript}"
+                    android:padding="10dp"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

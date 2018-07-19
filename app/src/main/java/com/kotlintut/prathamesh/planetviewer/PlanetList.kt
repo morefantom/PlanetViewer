@@ -1,0 +1,19 @@
+package com.kotlintut.prathamesh.planetviewer
+
+import java.io.Serializable
+
+data class Planet(val position:Int,val iconResource:Int,val name:String,val descript:String,val distanceSun:String,val diameter:Int,val periodOrbit:String,val moons:String,val bigDescript:String)
+
+class PlanetList : Serializable{
+
+    var list = mutableListOf<Planet>(Planet(1, R.mipmap.img1, "Mercury", "closest planet to the Sun", "57909227", 4879, "88", "0", "Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016."),
+            Planet(2, R.mipmap.img2, "Venus", "brightest planet in our sky", "108209475", 12104, "225", "0", "Venus is the second planet from the Sun and is the second brightest object in the night sky after the Moon. Named after the Roman goddess of love and beauty, Venus is the second largest terrestrial planet and is sometimes referred to as the Earth’s sister planet due the their similar size and mass. The surface of the planet is obscured by an opaque layer of clouds made up of sulphuric acid."),
+            Planet(3, R.mipmap.img3, "Earth", "has more exposed water than land", "149598262", 12742, "365", "1", "Earth is the third planet from the Sun and is the largest of the terrestrial planets. The Earth is the only planet in our solar system not to be named after a Greek or Roman deity. The Earth was formed approximately 4.54 billion years ago and is the only known planet to support life."),
+            Planet(4, R.mipmap.img4, "Mars", "largest volcano found in the solar system", "227943824", 6779, "687", "2", "Mars is the fourth planet from the Sun and is the second smallest planet in the solar system. Named after the Roman god of war, Mars is also often described as the “Red Planet” due to its reddish appearance. Mars is a terrestrial planet with a thin atmosphere composed primarily of carbon dioxide."),
+            Planet(5, R.mipmap.img5, "Jupiter", "largest planet in the solar system", "778340821", 139822, "4333", "67", "The planet Jupiter is the fifth planet out from the Sun, and is two and a half times more massive than all the other planets in the solar system combined. It is made primarily of gases and is therefore known as a “gas giant”."),
+            Planet(6, R.mipmap.img6, "Saturn", " second biggest, but the lightest planet", "1426666422", 116464, "10756", "62", "Saturn is the sixth planet from the Sun and the most distant that can be seen with the naked eye. Saturn is the second largest planet and is best known for its fabulous ring system that was first observed in 1610 by the astronomer Galileo Galilei. Like Jupiter, Saturn is a gas giant and is composed of similar gasses including hydrogen, helium and methane."),
+            Planet(7, R.mipmap.img7, "Uranus", "axis is at a 97 degree angle", "2870658186", 50724, "30687", "27", "Uranus is the seventh planet from the Sun. While being visible to the naked eye, it was not recognised as a planet due to its dimness and slow orbit. Uranus became the first planet discovered with the use of a telescope. Uranus is tipped over on its side with an axial tilt of 98 degrees. It is often described as “rolling around the Sun on its side."),
+            Planet(8, R.mipmap.img8, "Neptune", "one Neptune year lasts 165 Earth years", "4498396441", 49244, "60190", "14", "Neptune is the eighth planet from the Sun making it the most distant in the solar system. This gas giant planet may have formed much closer to the Sun in early solar system history before migrating to its present position."))
+
+
+}
